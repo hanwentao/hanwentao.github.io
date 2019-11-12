@@ -1,0 +1,10 @@
+title: Wentao's Blog
+description: "This is Wentao Han's website."
+copyright: >
+  &copy;2019 Wentao Han, powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/arp242/hello-css">Hello, CSS!</a>
+permalink: pretty
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - README.md

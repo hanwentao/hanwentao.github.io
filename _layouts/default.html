@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,700|Libre+Baskerville:400,400i,700|Noto+Serif+SC:400,700&display=swap&subset=chinese-simplified" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/all.css">
+</head>
+
+<body>
+  <nav class="center">
+    {% if page.url != "/" %}<a href="/">{% endif %}Home{% if page.url != "/" %}</a>{% endif %} |
+    {% if page.url != "/posts/" %}<a href="/posts/">{% endif %}Posts{% if page.url != "/posts/" %}</a>{% endif %} |
+    {% if page.url != "/categories/" %}<a href="/categories/">{% endif %}Categories{% if page.url != "/categories/" %}</a>{% endif %} |
+    {% if page.url != "/tags/" %}<a href="/tags/">{% endif %}Tags{% if page.url != "/tags/" %}</a>{% endif %} |
+    {% if page.url != "/about/" %}<a href="/about/">{% endif %}About{% if page.url != "/about/" %}</a>{% endif %}
+  </nav>
+
+  <main class="page">
+    {{ content }}
+  </main>
+
+  <footer class="center">
+    <p>{{ site.copyright }}</p>
+  </footer>
+</body>
+
+</html>
