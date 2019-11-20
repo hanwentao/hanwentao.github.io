@@ -1,0 +1,37 @@
+#nav {
+  padding-left: 1em;
+  margin: .5rem auto;
+}
+
+#disclaimer {
+  color: #666;
+  padding-left: 1em;
+  margin: .5rem auto;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.tag-list {
+  display: inline;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.tag-list li {
+  display: inline;
+  margin-left: .5em;
+}
+
+.date {
+  color: #999;
+  text-align: center;
+}
+
+.short-date {
+  font-family: 'Fira Code', monospace;
+  font-variant-ligatures: none;
+  color: #999;
+  margin-right: 1em;
+}

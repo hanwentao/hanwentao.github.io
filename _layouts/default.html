@@ -7,22 +7,23 @@
   <title>{{ site.title }}</title>
   <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,700|Libre+Baskerville:400,400i,700|Noto+Serif+SC:400,700&display=swap&subset=chinese-simplified" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/all.css">
+  <link rel="stylesheet" href="/assets/css/more.css">
 </head>
 
 <body>
-  <nav class="center">
-    {% if page.url != "/" %}<a href="/">{% endif %}Home{% if page.url != "/" %}</a>{% endif %} |
-    {% if page.url != "/posts/" %}<a href="/posts/">{% endif %}Posts{% if page.url != "/posts/" %}</a>{% endif %} |
-    {% if page.url != "/categories/" %}<a href="/categories/">{% endif %}Categories{% if page.url != "/categories/" %}</a>{% endif %} |
-    {% if page.url != "/tags/" %}<a href="/tags/">{% endif %}Tags{% if page.url != "/tags/" %}</a>{% endif %} |
-    {% if page.url != "/about/" %}<a href="/about/">{% endif %}About{% if page.url != "/about/" %}</a>{% endif %}
+  <nav id="nav" class="center">
+{% for item_name in site.nav %}
+{% assign nav_page = site.pages | where: 'name', item_name | first %}
+    {% if page.name != nav_page.name %}<a href="{{ nav_page.url }}">{% endif %}{{ nav_page.title }}{% if page.name != nav_page.name %}</a>{% endif %}
+    {% unless forloop.last %}|{% endunless %}
+{% endfor %}
   </nav>
 
   <main class="page">
     {{ content }}
   </main>
 
-  <footer class="center">
+  <footer id="disclaimer" class="center">
     <p>{{ site.copyright }}</p>
   </footer>
 </body>

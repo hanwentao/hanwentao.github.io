@@ -4,10 +4,10 @@ title: Categories
 ---
 
 {% for category in site.categories %}
-<h2>{{ category[0] }}</h2>
-<ul>
+<h2 id="{{ category[0] }}">{{ category[0] }}</h2>
+<ul class="post-list">
 {% for post in category[1] %}
-  <li>{{ post.date | date_to_string }}: <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  <li><span class="short-date">{{ post.date | date_to_string }}</span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}
 </ul>
 {% endfor %}

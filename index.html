@@ -1,10 +1,12 @@
 ---
 layout: page
+title: Home
+hide_title: true
 ---
 
 {% for post in site.posts limit: 5 %}
 <h1>{{ post.title }}</h1>
-<p>{{ post.date | date_to_long_string }}</p>
+<p class="date">{{ post.date | date_to_long_string }}</p>
 {{ post.excerpt }}
 <p><a href="{{ post.url | relative_url }}">Read more</a></p>
 {% endfor %}
