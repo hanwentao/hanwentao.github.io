@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown</title>
+    <style>
+      body, html {
+        height: 100%;
+        display: grid;
+      }
+      #countdown {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: xx-large;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="countdown">
+      <span id="days"></span> 天
+      <span id="hours"></span> 时
+      <span id="minutes"></span> 分
+      <span id="seconds"></span> 秒
+    </div>
+  </body>
+  <script>
+    const returnTime = Date.parse("29 Jan 2021 21:20:00 CST");
+    setInterval(function() {
+      let now = Date.now();
+      let seconds = Math.floor((returnTime - now) / 1000);
+      let minutes = Math.floor(seconds / 60);
+      let hours = Math.floor(minutes / 60);
+      let days = Math.floor(hours / 24);
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = (hours % 24).toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = (minutes % 60).toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = (seconds % 60).toString().padStart(2, '0');
+    }, 100);
+  </script>
+</html>
