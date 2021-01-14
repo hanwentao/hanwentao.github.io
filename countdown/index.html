@@ -9,7 +9,7 @@
       }
       #countdown {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: xx-large;
+        font-size: 200%;
         margin: auto;
       }
     </style>
@@ -23,7 +23,7 @@
     </div>
   </body>
   <script>
-    const returnTime = Date.parse("29 Jan 2021 21:20:00 CST");
+    const returnTime = Date.parse("2021-01-29T21:20:00.000+08:00");
     setInterval(function() {
       let now = Date.now();
       let seconds = Math.floor((returnTime - now) / 1000);
